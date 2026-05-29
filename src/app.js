@@ -4,6 +4,7 @@ import { REST } from '@discordjs/rest';
 import express from 'express';
 import cron from 'node-cron';
 
+import setupLogs from './logs.js';
 import config from './config/application.js';
 import { initializeDatabase } from './utils/database.js';
 import { getGuildConfig } from './services/guildConfig.js';
@@ -83,6 +84,8 @@ class TitanBot extends Client {
       startupLog('Logging into Discord...');
       await this.login(this.config.bot.token);
       startupLog('Discord login successful');
+      
+      setupLogs(this);
       
       startupLog('Registering slash commands...');
       await this.registerCommands();
