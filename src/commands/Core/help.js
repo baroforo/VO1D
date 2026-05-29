@@ -18,7 +18,6 @@ const __dirname = path.dirname(__filename);
 
 const CATEGORY_SELECT_ID = "help-category-select";
 const ALL_COMMANDS_ID = "help-all-commands";
-const BUG_REPORT_BUTTON_ID = "help-bug-report";
 const HELP_MENU_TIMEOUT_MS = 5 * 60 * 1000;
 
 const CATEGORY_ICONS = {
@@ -157,38 +156,26 @@ export async function createInitialHelpMenu(client) {
         }
     );
 
-    embed.setFooter({ 
-        text: "Made with ❤️" 
-    });
-    embed.setTimestamp();
+ embed.setFooter({ 
+    text: "Made by 8yellow8" 
+});
+embed.setTimestamp();
 
-    const bugReportButton = new ButtonBuilder()
-        .setCustomId(BUG_REPORT_BUTTON_ID)
-        .setLabel("Report Bug")
-        .setStyle(ButtonStyle.Danger);
+const gunsButton = new ButtonBuilder()
+    .setLabel("8yellow8")
+    .setURL("https://guns.lol/._.yellow._./")
+    .setStyle(ButtonStyle.Link);
 
-    const supportButton = new ButtonBuilder()
-        .setLabel("Support Server")
-        .setURL("https://discord.gg/QnWNz2dKCE")
-        .setStyle(ButtonStyle.Link);
+const buttonRow = new ActionRowBuilder().addComponents(
+    gunsButton
+);
 
-    const touchpointButton = new ButtonBuilder()
-        .setLabel("Learn from Touchpoint")
-        .setURL("https://www.youtube.com/@TouchDisc")
-        .setStyle(ButtonStyle.Link);
-
-    const selectRow = createSelectMenu(
-        CATEGORY_SELECT_ID,
-        "Select to view the commands",
-        options,
-    );
-
-    const buttonRow = new ActionRowBuilder().addComponents([
-        bugReportButton,
-        supportButton,
-        touchpointButton,
-    ]);
-
+const selectRow = createSelectMenu(
+    CATEGORY_SELECT_ID,
+    "Select to view the commands",
+    options,
+);
+    
     return {
         embeds: [embed],
         components: [buttonRow, selectRow],
