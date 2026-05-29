@@ -25,7 +25,7 @@ export const botConfig = {
     activities: [
       {
         // Text users will see (example: "Playing /help | Titan Bot").
-        name: "Made with ❤️",
+        name: "VO1D",
         // Activity type number (0 = Playing).
         type: 0, 
       },
@@ -88,7 +88,7 @@ export const botConfig = {
   embeds: {
     colors: {
       // Main brand colors.
-      primary: "#336699", 
+      primary: "#5f05d1", 
       secondary: "#2F3136", 
 
       // Standard status colors for success/error/warning/info messages.
@@ -136,7 +136,7 @@ export const botConfig = {
     },
     footer: {
       // Default footer text used in bot embeds.
-      text: "Titan Bot",
+      text: "VO1D",
       // Footer icon URL (null = no icon).
       icon: null,
     },
@@ -156,9 +156,9 @@ export const botConfig = {
   economy: {
     currency: {
       // Currency display name.
-      name: "coins",
+      name: "SH4RD",
       // Plural display name.
-      namePlural: "coins",
+      namePlural: "SH4RDS",
       // Currency symbol shown in balances.
       symbol: "$",
     },
@@ -311,8 +311,7 @@ export const botConfig = {
 
       // Allowed safety limits for account-age requirements.
       // 1 = minimum day, 365 = maximum days.
-      minAccountAge: 1,      
-      maxAccountAge: 365,    
+      minAccountAge: 10,    
 
       // If true, user receives a DM after verification.
       sendDMNotification: true,
