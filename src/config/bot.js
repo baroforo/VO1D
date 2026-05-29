@@ -311,7 +311,8 @@ export const botConfig = {
 
       // Allowed safety limits for account-age requirements.
       // 1 = minimum day, 365 = maximum days.
-      minAccountAge: 10,    
+      minAccountAge: 1, 
+      maxAccountAge: 365,
 
       // If true, user receives a DM after verification.
       sendDMNotification: true,
